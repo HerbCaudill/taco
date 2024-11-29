@@ -331,10 +331,10 @@ export class Connection extends EventEmitter<ConnectionEvents> {
         // SHARED SECRET NEGOTIATION
 
         sendSeed: assign(({ context }) => {
-          const { user, peer, seed = randomKeyBytes() } = context
+          const { device, theirDevice, seed = randomKeyBytes() } = context
 
-          const recipientPublicKey = peer!.keys.encryption
-          const senderSecretKey = user!.keys.encryption.secretKey
+          const recipientPublicKey = theirDevice!.keys.encryption
+          const senderSecretKey = device.keys.encryption.secretKey
 
           this.#log(`encrypting seed with key ${recipientPublicKey}`)
           const encryptedSeed = asymmetric.encryptBytes({
@@ -350,10 +350,10 @@ export class Connection extends EventEmitter<ConnectionEvents> {
         deriveSharedKey: assign(({ context, event }) => {
           assertEvent(event, 'SEED')
           const { encryptedSeed } = event.payload
-          const { seed, user, peer } = context
+          const { seed, device, theirDevice } = context
           const cipher = encryptedSeed
-          const senderPublicKey = peer!.keys.encryption
-          const recipientSecretKey = user!.keys.encryption.secretKey
+          const senderPublicKey = theirDevice!.keys.encryption
+          const recipientSecretKey = device.keys.encryption.secretKey
 
           // decrypt the seed they sent
           try {

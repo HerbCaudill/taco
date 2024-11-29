@@ -16,7 +16,7 @@ import {
   tryToConnect,
 } from 'util/testing/index.js'
 import { describe, expect, it } from 'vitest'
-import type { InviteeDeviceContext } from '../types.js'
+import type { InviteeDeviceContext, MemberContext } from '../types.js'
 import { createDevice } from 'device/createDevice.js'
 
 describe('connection', () => {
@@ -386,6 +386,112 @@ describe('connection', () => {
         }
 
         expectEveryoneToKnowEveryone(alice, bob)
+      })
+
+      it('two devices can still connect after removing a third device', async () => {
+        const { alice } = setup('alice')
+
+        const laptopContext = alice.connectionContext as MemberContext
+        const phoneContext: MemberContext = {
+          user: cloneDeep(alice.user),
+          device: cloneDeep(alice.phone!),
+          team: cloneDeep(alice.team),
+        }
+        const tablet = createDevice({
+          userId: alice.userId,
+          deviceName: 'tablet',
+          seed: `${alice.userId}-tablet`,
+        })
+        const tabletContext: MemberContext = {
+          user: cloneDeep(alice.user),
+          device: tablet,
+          team: cloneDeep(alice.team),
+        }
+
+        // Alice invites and admits her phone
+        {
+          const { seed } = alice.team.inviteDevice()
+          const phoneInvitationContext: InviteeDeviceContext = {
+            userName: alice.userName,
+            device: phoneContext.device,
+            invitationSeed: seed,
+          }
+          const join = joinTestChannel(new TestChannel())
+          const laptopConnection = join(laptopContext).start()
+          const phoneConnection = join(phoneInvitationContext).start()
+          await all([laptopConnection, phoneConnection], 'connected')
+
+          phoneContext.team = phoneConnection.team!
+
+          // disconnect
+          laptopConnection.stop()
+          phoneConnection.stop()
+          await all([laptopConnection, phoneConnection], 'disconnected')
+        }
+
+        // Alice should have two devices by now
+        expect(laptopContext.team.members(alice.userId)?.devices?.length).toEqual(2)
+        expect(phoneContext.team.members(alice.userId)?.devices?.length).toEqual(2)
+
+        // Alice invites and admits her tablet
+        {
+          const { seed } = alice.team.inviteDevice()
+          const tabletInvitationContext: InviteeDeviceContext = {
+            userName: alice.userName,
+            device: tabletContext.device,
+            invitationSeed: seed,
+          }
+          const join = joinTestChannel(new TestChannel())
+          const laptopConnection = join(laptopContext).start()
+          const tabletConnection = join(tabletInvitationContext).start()
+          await all([laptopConnection, tabletConnection], 'connected')
+
+          tabletContext.team = tabletConnection.team!
+
+          // disconnect
+          laptopConnection.stop()
+          tabletConnection.stop()
+          await all([laptopConnection, tabletConnection], 'disconnected')
+        }
+
+        // Alice should have three devices by now
+        expect(laptopContext.team.members(alice.userId)?.devices?.length).toEqual(3)
+        expect(tabletContext.team.members(alice.userId)?.devices?.length).toEqual(3)
+
+        // Alice's user keys are still the first generation
+        expect(laptopContext.team.members(alice.userId)?.keys.generation).toBe(0)
+
+        // Alice removes her phone using her laptop, which triggers a user key rotation
+        laptopContext.team.removeDevice(phoneContext.device.deviceId)
+
+        // Alice should have two devices left and a new user keys generation on her laptop
+        expect(laptopContext.team.members(alice.userId)?.devices?.length).toEqual(2)
+        expect(laptopContext.team.members(alice.userId)?.keys.generation).toBe(1)
+
+        // Alice's tablet was offline and does not have the new user keys generation
+        expect(tabletContext.team.members(alice.userId)?.devices?.length).toEqual(3)
+        expect(tabletContext.team.members(alice.userId)?.keys.generation).toBe(0)
+
+        // Alice connects laptop and tablet
+        {
+          const join = joinTestChannel(new TestChannel())
+          const laptopConnection = join(laptopContext).start()
+          const tabletConnection = join(tabletContext).start()
+
+          // if the derivation of a shared key fails during the connection setup, we would see an ENCRYPTION_FAILURE
+          laptopConnection.on('localError', console.warn)
+          tabletConnection.on('localError', console.warn)
+
+          await all([laptopConnection, tabletConnection], 'connected')
+
+          // Alice's tablet is updated with the latest user keys and correct device count
+          expect(tabletContext.team.members(alice.userId)?.devices?.length).toEqual(2)
+          expect(tabletContext.team.members(alice.userId)?.keys.generation).toBe(1)
+
+          laptopConnection.stop()
+          tabletConnection.stop()
+          await all([laptopConnection, tabletConnection], 'disconnected')
+        }
       })
     })
   })
