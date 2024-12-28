@@ -2,7 +2,7 @@ import { createKeyset, type UnixTimestamp } from '@localfirst/crdx'
 import { createId } from '@paralleldrive/cuid2'
 import { randomKey } from '@localfirst/crypto'
 import type { DeviceWithSecrets } from './types.js'
-import { KeyType } from 'util/index.js'
+import { KeyType } from '../util/index.js'
 
 export const createDevice = ({
   userId,

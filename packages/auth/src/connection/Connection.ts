@@ -10,7 +10,7 @@ import {
 } from '@localfirst/crdx'
 import { asymmetric, base58, randomKeyBytes, symmetric, type Hash } from '@localfirst/crypto'
 import { assert, debug } from '@localfirst/shared'
-import { deriveSharedKey } from 'connection/deriveSharedKey.js'
+import { deriveSharedKey } from './deriveSharedKey.js'
 import {
   DEVICE_REMOVED,
   DEVICE_UNKNOWN,
@@ -25,19 +25,19 @@ import {
   UNHANDLED,
   createErrorMessage,
   type ConnectionErrorType,
-} from 'connection/errors.js'
-import { getDeviceUserFromGraph } from 'connection/getDeviceUserFromGraph.js'
-import * as identity from 'connection/identity.js'
-import type { ConnectionMessage, DisconnectMessage } from 'connection/message.js'
-import { redactDevice } from 'device/index.js'
-import * as invitations from 'invitation/index.js'
+} from './errors.js'
+import { getDeviceUserFromGraph } from './getDeviceUserFromGraph.js'
+import * as identity from './identity.js'
+import type { ConnectionMessage, DisconnectMessage } from './message.js'
+import { redactDevice } from '../device/index.js'
+import * as invitations from '../invitation/index.js'
 import { pack, unpack } from 'msgpackr'
-import { getTeamState } from 'team/getTeamState.js'
-import { Team, decryptTeamGraph, type TeamAction, type TeamContext } from 'team/index.js'
-import * as select from 'team/selectors/index.js'
-import { arraysAreEqual } from 'util/arraysAreEqual.js'
-import { KeyType } from 'util/index.js'
-import { syncMessageSummary } from 'util/testing/messageSummary.js'
+import { getTeamState } from '../team/getTeamState.js'
+import { Team, decryptTeamGraph, type TeamAction, type TeamContext } from '../team/index.js'
+import * as select from '../team/selectors/index.js'
+import { arraysAreEqual } from '../util/arraysAreEqual.js'
+import { KeyType } from '../util/index.js'
+import { syncMessageSummary } from '../util/testing/messageSummary.js'
 import { and, assertEvent, assign, createActor, setup } from 'xstate'
 import { MessageQueue, type NumberedMessage } from './MessageQueue.js'
 import { extendServerContext, getUserName, messageSummary, stateSummary } from './helpers.js'
@@ -64,7 +64,7 @@ himself told me it's OK. So
 https://github.com/statelyai/xstate/discussions/4783#discussioncomment-8673350
 
 The bulk of this class is an XState state machine. It's instantiated in the constructor. It looks
-something like this: 
+something like this:
 
 ```ts
 const machine = setup({
@@ -80,7 +80,7 @@ const machine = setup({
 ```
 
 To understand the way this flows, the best place to start is the state machine definition passed to
-`createMachine`. 
+`createMachine`.
 
 You can also visualize this machine in the Stately visualizer - here's a link that's current at time
 of writing this:

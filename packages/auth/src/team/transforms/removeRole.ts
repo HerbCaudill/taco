@@ -1,5 +1,5 @@
-import { type Transform } from 'team/types.js'
-import { KeyType } from 'util/index.js'
+import { type Transform } from '../types.js'
+import { KeyType } from '../../util/index.js'
 
 export const removeRole =
   (roleName: string): Transform =>

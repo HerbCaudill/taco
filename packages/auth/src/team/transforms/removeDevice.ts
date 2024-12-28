@@ -1,8 +1,8 @@
 import { type Keyset } from '@localfirst/crdx'
-import { type Lockbox } from 'lockbox/index.js'
-import * as select from 'team/selectors/index.js'
-import { type Member, type Transform } from 'team/types.js'
-import { KeyType } from 'util/types.js'
+import { type Lockbox } from '../../lockbox/index.js'
+import * as select from '../selectors/index.js'
+import { type Member, type Transform } from '../types.js'
+import { KeyType } from '../../util/types.js'
 
 export const removeDevice =
   (deviceId: string, lockboxes: Lockbox[] = []): Transform =>

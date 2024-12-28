@@ -1,7 +1,7 @@
 import { eventPromise, pause } from '@localfirst/shared'
 import { cloneDeep } from 'lodash-es'
-import { ADMIN } from 'role/index.js'
-import * as teams from 'team/index.js'
+import { ADMIN } from '../../role/index.js'
+import * as teams from '../../team/index.js'
 import {
   TestChannel,
   all,
@@ -14,10 +14,10 @@ import {
   joinTestChannel,
   setup,
   tryToConnect,
-} from 'util/testing/index.js'
+} from '../../util/testing/index.js'
 import { describe, expect, it } from 'vitest'
 import type { InviteeDeviceContext } from '../types.js'
-import { createDevice } from 'device/createDevice.js'
+import { createDevice } from '../../device/createDevice.js'
 
 describe('connection', () => {
   describe('authentication', () => {

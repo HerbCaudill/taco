@@ -1,4 +1,4 @@
-import { type Lockbox } from 'lockbox/index.js'
+import type { Lockbox } from '../lockbox/index.js'
 
 export const lockboxSummary = (l: Lockbox) =>
   `${l.recipient.name}(${trunc(l.recipient.publicKey)}):${l.contents.name}#${l.contents.generation}`

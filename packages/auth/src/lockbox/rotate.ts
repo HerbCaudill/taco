@@ -1,7 +1,7 @@
 import { type Keyset, type KeysetWithSecrets } from '@localfirst/crdx'
-import { create } from 'lockbox/create.js'
-import { type Lockbox } from 'lockbox/types.js'
-import { assertScopesMatch } from 'util/index.js'
+import { create } from './create.js'
+import { type Lockbox } from './types.js'
+import { assertScopesMatch } from '../util/index.js'
 
 /**
  * "Rotating" a lockbox means replacing the keys it contains with new ones.

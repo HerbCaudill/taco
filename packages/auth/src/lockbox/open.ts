@@ -1,7 +1,7 @@
 import { memoize } from '@localfirst/shared'
 import { type KeysetWithSecrets } from '@localfirst/crdx'
 import { asymmetric } from '@localfirst/crypto'
-import { type Lockbox } from 'lockbox/types.js'
+import { type Lockbox } from './types.js'
 
 export const open = memoize(
   (lockbox: Lockbox, decryptionKeys: KeysetWithSecrets): KeysetWithSecrets => {

@@ -1,4 +1,4 @@
-import { castServer } from 'server/castServer.js'
+import { castServer } from '../../server/castServer.js'
 import type { TeamState } from '../index.js'
 import { member, device, server, hasServer } from './index.js'
 

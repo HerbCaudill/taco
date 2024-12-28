@@ -1,4 +1,4 @@
-import { ADMIN } from 'role/index.js'
+import { ADMIN } from '../../role/index.js'
 import {
   TestChannel,
   any,
@@ -13,7 +13,7 @@ import {
   joinTestChannel,
   setup,
   updated,
-} from 'util/testing/index.js'
+} from '../../util/testing/index.js'
 import { pause } from '@localfirst/shared'
 import { describe, expect, it } from 'vitest'
 import { type MemberContext } from '../types.js'

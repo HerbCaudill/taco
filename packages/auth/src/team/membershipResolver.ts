@@ -1,8 +1,8 @@
 import { getConcurrentBubbles, type Link, type Resolver } from '@localfirst/crdx'
 import { isAdminOnlyAction } from './isAdminOnlyAction.js'
-import { type Invitation } from 'invitation/index.js'
-import { ADMIN } from 'role/index.js'
-import { bySeniority } from 'team/bySeniority.js'
+import { type Invitation } from '../invitation/index.js'
+import { ADMIN } from '../role/index.js'
+import { bySeniority } from './bySeniority.js'
 import {
   type MembershipRuleEnforcer,
   type AddMemberAction,
@@ -14,8 +14,8 @@ import {
   type TeamLink,
   type TeamGraph,
   type AdmitMemberAction,
-} from 'team/types.js'
-import { arraysAreEqual } from 'util/arraysAreEqual.js'
+} from './types.js'
+import { arraysAreEqual } from '../util/arraysAreEqual.js'
 
 /**
  * This is a custom resolver, used to flatten a graph of team membership operations into a strictly

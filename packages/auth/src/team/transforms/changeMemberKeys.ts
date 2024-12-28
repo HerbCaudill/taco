@@ -1,5 +1,5 @@
 import { type Keyset } from '@localfirst/crdx'
-import { type Transform } from 'team/types.js'
+import { type Transform } from '../types.js'
 
 export const changeMemberKeys =
   (keys: Keyset): Transform =>

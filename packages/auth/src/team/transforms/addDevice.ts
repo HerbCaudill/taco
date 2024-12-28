@@ -1,5 +1,5 @@
-import { type Device } from 'device/index.js'
-import { type Transform } from 'team/types.js'
+import { type Device } from '../../device/index.js'
+import { type Transform } from '../types.js'
 
 export const addDevice =
   (device: Device): Transform =>

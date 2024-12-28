@@ -1,6 +1,6 @@
 import { type KeysetWithSecrets } from '@localfirst/crdx'
-import { open } from 'lockbox/index.js'
-import { type TeamState } from 'team/types.js'
+import { open } from '../../lockbox/index.js'
+import { type TeamState } from '../types.js'
 
 /**
  * Returns all keys that can be accessed directly or indirectly (via lockboxes) by the given keyset

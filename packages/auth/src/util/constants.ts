@@ -1,4 +1,4 @@
-import { type ValidationResult } from 'util/types.js'
+import { type ValidationResult } from './types.js'
 
 // avoiding enums
 export const SIGNATURE = 'SIGNATURE'

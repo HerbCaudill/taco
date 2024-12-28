@@ -1,5 +1,5 @@
-import { type InvitationState } from 'invitation/index.js'
-import { type Transform } from 'team/types.js'
+import { type InvitationState } from '../../invitation/index.js'
+import { type Transform } from '../types.js'
 
 export const useInvitation =
   (id: string): Transform =>

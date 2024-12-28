@@ -1,9 +1,9 @@
 import { createKeyset } from '@localfirst/crdx'
 import { describe, expect, it } from 'vitest'
 import * as select from '../index.js'
-import { ADMIN } from 'role/index.js'
-import { KeyType, getScope } from 'util/index.js'
-import { setup } from 'util/testing/index.js'
+import { ADMIN } from '../../../role/index.js'
+import { KeyType, getScope } from '../../../util/index.js'
+import { setup } from '../../../util/testing/index.js'
 
 const { USER, TEAM, ROLE } = KeyType
 

@@ -1,4 +1,4 @@
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 import { hasDevice } from './device.js'
 
 export const deviceWasRemoved = (state: TeamState, deviceId: string) => {

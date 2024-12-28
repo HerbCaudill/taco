@@ -1,4 +1,4 @@
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 
 export const role = (state: TeamState, roleName: string) => {
   const role = state.roles.find(r => r.roleName === roleName)

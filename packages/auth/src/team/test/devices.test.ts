@@ -1,5 +1,5 @@
-import { createDevice, redactDevice } from 'index.js'
-import { setup as setupUsers } from 'util/testing/index.js'
+import { createDevice, redactDevice } from '../../index.js'
+import { setup as setupUsers } from '../../util/testing/index.js'
 import { describe, expect, it } from 'vitest'
 
 describe('Team', () => {

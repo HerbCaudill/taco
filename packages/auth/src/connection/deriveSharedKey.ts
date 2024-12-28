@@ -1,5 +1,5 @@
 import { hash, hashBytes, type Base58, base58 } from '@localfirst/crypto'
-import { HashPurpose } from 'util/index.js'
+import { HashPurpose } from '../util/index.js'
 
 /**
  * Takes two seeds (in this case, provided by each of two peers that are connecting) and

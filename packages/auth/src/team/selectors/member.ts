@@ -1,4 +1,4 @@
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 
 export const member = (state: TeamState, userId: string, options = { includeRemoved: false }) => {
   const membersToSearch = [

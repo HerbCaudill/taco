@@ -1,7 +1,7 @@
 import { debug, truncateHashes } from '@localfirst/shared'
 import { ROOT } from '@localfirst/crdx'
-import { invitationCanBeUsed } from 'invitation/index.js'
-import { VALID, ValidationError, actionFingerprint } from 'util/index.js'
+import { invitationCanBeUsed } from '../invitation/index.js'
+import { VALID, ValidationError, actionFingerprint } from '../util/index.js'
 import { isAdminOnlyAction } from './isAdminOnlyAction.js'
 import * as select from './selectors/index.js'
 import {

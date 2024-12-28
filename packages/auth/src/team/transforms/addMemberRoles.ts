@@ -1,4 +1,4 @@
-import { type Transform } from 'team/types.js'
+import { type Transform } from '../types.js'
 
 export const addMemberRoles = (userId: string, roles: string[] = []): Transform[] =>
   roles.map(roleName => state => ({

@@ -1,7 +1,7 @@
 import { memoize } from '@localfirst/shared'
 import { signatures } from '@localfirst/crypto'
-import { deriveId } from 'invitation/deriveId.js'
-import { type ProofOfInvitation } from 'invitation/types.js'
+import { deriveId } from './deriveId.js'
+import { type ProofOfInvitation } from './types.js'
 import { generateStarterKeys } from './generateStarterKeys.js'
 import { normalize } from './normalize.js'
 

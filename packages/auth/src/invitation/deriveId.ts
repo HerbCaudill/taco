@@ -1,5 +1,5 @@
 import { type Hash, hash, stretch } from '@localfirst/crypto'
-import { HashPurpose } from 'util/index.js'
+import { HashPurpose } from '../util/constants.js'
 
 export function deriveId(seed: string) {
   // ## Step 1b

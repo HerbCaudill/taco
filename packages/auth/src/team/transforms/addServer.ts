@@ -1,6 +1,6 @@
-import type { Server } from 'server/index.js'
-import type { TeamState, Transform } from 'team/types.js'
-import { unique } from 'util/unique.js'
+import type { Server } from '../../server/index.js'
+import type { TeamState, Transform } from '../types.js'
+import { unique } from '../../util/unique.js'
 
 export const addServer =
   (newServer: Server): Transform =>

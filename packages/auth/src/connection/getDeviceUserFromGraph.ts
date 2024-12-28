@@ -1,8 +1,8 @@
 import { getLatestGeneration, type Keyring, type UserWithSecrets } from '@localfirst/crdx'
 import { assert } from '@localfirst/shared'
-import { generateProof } from 'invitation/generateProof.js'
-import { generateStarterKeys } from 'invitation/generateStarterKeys.js'
-import { KeyType } from 'util/index.js'
+import { generateProof } from '../invitation/generateProof.js'
+import { generateStarterKeys } from '../invitation/generateStarterKeys.js'
+import { KeyType } from '../util/index.js'
 import { getTeamState } from '../team/getTeamState.js'
 import * as select from '../team/selectors/index.js'
 
