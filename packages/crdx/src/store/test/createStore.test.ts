@@ -1,9 +1,9 @@
 import { asymmetric } from '@localfirst/crypto'
-import { createGraph, getRoot, serialize } from 'graph/index.js'
-import { createStore } from 'store/index.js'
-import { createUser } from 'user/index.js'
+import { createGraph, getRoot, serialize } from '../../graph/index.js'
+import { createStore } from '../index.js'
+import { createUser } from '../../user/index.js'
 import 'util/testing/expect/toBeValid'
-import { TEST_GRAPH_KEYS as keys } from 'util/testing/setup.js'
+import { TEST_GRAPH_KEYS as keys } from '../../util/testing/setup.js'
 import { describe, expect, test } from 'vitest'
 import {
   counterReducer,

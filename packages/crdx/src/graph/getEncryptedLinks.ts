@@ -1,4 +1,4 @@
-import type { Hash } from 'util/index.js'
+import type { Hash } from '../util/index.js'
 import type { Graph } from './types.js'
 
 export const getEncryptedLinks = (graph: Graph<any, any>, hashes: Hash[]) =>

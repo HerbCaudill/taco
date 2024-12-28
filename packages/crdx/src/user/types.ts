@@ -1,4 +1,4 @@
-﻿import { type Keyset, type KeysetWithSecrets } from 'keyset/index.js'
+﻿import { type Keyset, type KeysetWithSecrets } from '../keyset/index.js'
 
 export type User = {
   /** Unique ID populated on creation. */

@@ -1,5 +1,5 @@
 ﻿import { type Graph, type Link } from './types.js'
-import { type Hash } from 'util/index.js'
+import { type Hash } from '../util/index.js'
 import { getPredecessorHashes } from './getPredecessors.js'
 
 /** Returns true if `a` is a predecessor of `b` */

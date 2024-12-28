@@ -1,8 +1,8 @@
 import { assert } from '@localfirst/shared'
-import { decryptGraph, type DecryptFn } from 'graph/decrypt.js'
-import { getChildMap, invertLinkMap, merge, type Action, type Graph } from 'graph/index.js'
-import { createKeyring, type Keyring, type KeysetWithSecrets } from 'keyset/index.js'
-import { validate } from 'validator/index.js'
+import { decryptGraph, type DecryptFn } from '../graph/decrypt.js'
+import { getChildMap, invertLinkMap, merge, type Action, type Graph } from '../graph/index.js'
+import { createKeyring, type Keyring, type KeysetWithSecrets } from '../keyset/index.js'
+import { validate } from '../validator/index.js'
 import { type SyncMessage, type SyncState } from './types.js'
 
 /**

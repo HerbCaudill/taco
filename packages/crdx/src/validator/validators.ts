@@ -1,6 +1,6 @@
-﻿import { ROOT, VALID } from 'constants.js'
-import { getRoot } from 'graph/getRoot.js'
-import { hashEncryptedLink } from 'graph/hashLink.js'
+﻿import { ROOT, VALID } from '../constants.js'
+import { getRoot } from '../graph/getRoot.js'
+import { hashEncryptedLink } from '../graph/hashLink.js'
 import { ValidationError, type ValidatorSet } from './types.js'
 
 export const validators: ValidatorSet = {

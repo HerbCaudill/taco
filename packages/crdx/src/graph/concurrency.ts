@@ -1,5 +1,5 @@
 import { memoize } from '@localfirst/shared'
-import { type Hash } from 'util/index.js'
+import { type Hash } from '../util/index.js'
 import { getHashes } from './getHashes.js'
 import { getLink } from './getLink.js'
 import { isPredecessorHash } from './isPredecessor.js'

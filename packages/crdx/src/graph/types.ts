@@ -1,4 +1,4 @@
-﻿import type { Base58, Hash, Optional, UnixTimestamp } from 'util/types.js'
+﻿import type { Base58, Hash, Optional, UnixTimestamp } from '../util/types.js'
 
 /**
  * A hash graph is an acyclic directed graph of links. Each link is **asymmetrically encrypted and

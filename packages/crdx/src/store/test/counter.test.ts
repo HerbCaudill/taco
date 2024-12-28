@@ -1,12 +1,12 @@
-import { TEST_GRAPH_KEYS as keys } from 'util/testing/setup.js'
+import { TEST_GRAPH_KEYS as keys } from '../../util/testing/setup.js'
 import { describe, expect, test } from 'vitest'
-import { createStore } from 'store/index.js'
-import { createUser } from 'user/index.js'
+import { createStore } from '../index.js'
+import { createUser } from '../../user/index.js'
 import { counterReducer } from './shared/counterReducer.js'
 
 /*
 This is intended to be the simplest possible proof of concept: An increment-only counter. There is
-no custom resolver because there are no conflicts possible. 
+no custom resolver because there are no conflicts possible.
 */
 
 const alice = createUser('alice')

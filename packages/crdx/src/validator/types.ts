@@ -1,4 +1,4 @@
-import { type Action, type Link, type Graph } from 'graph/index.js'
+import { type Action, type Link, type Graph } from '../graph/index.js'
 
 export type InvalidResult = {
   isValid: false

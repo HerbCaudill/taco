@@ -1,8 +1,8 @@
 import { asymmetric, keyToBytes, signatures } from '@localfirst/crypto'
 import { describe, expect, it } from 'vitest'
-import { EPHEMERAL_SCOPE } from 'constants.js'
-import { createKeyset } from 'keyset/createKeyset.js'
-import { KeyType } from 'keyset/types.js'
+import { EPHEMERAL_SCOPE } from '../../constants.js'
+import { createKeyset } from '../createKeyset.js'
+import { KeyType } from '../types.js'
 
 const { USER } = KeyType
 

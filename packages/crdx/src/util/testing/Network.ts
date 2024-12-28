@@ -1,14 +1,14 @@
 // ignore file coverage
-import { TEST_GRAPH_KEYS as keys } from 'util/testing/setup.js'
+import { TEST_GRAPH_KEYS as keys } from './setup.js'
 import { expect } from 'vitest'
 import { setup } from './setup.js'
-import { createGraph, type Graph, headsAreEqual } from 'graph/index.js'
-import { type KeysetWithSecrets } from 'keyset/index.js'
-import { generateMessage } from 'sync/generateMessage.js'
-import { initSyncState } from 'sync/initSyncState.js'
-import { receiveMessage } from 'sync/receiveMessage.js'
-import { type SyncMessage, type SyncState } from 'sync/types.js'
-import { type UserWithSecrets } from 'user/index.js'
+import { createGraph, type Graph, headsAreEqual } from '../../graph/index.js'
+import { type KeysetWithSecrets } from '../../keyset/index.js'
+import { generateMessage } from '../../sync/generateMessage.js'
+import { initSyncState } from '../../sync/initSyncState.js'
+import { receiveMessage } from '../../sync/receiveMessage.js'
+import { type SyncMessage, type SyncState } from '../../sync/types.js'
+import { type UserWithSecrets } from '../../user/index.js'
 
 /** Simulates a peer-to-peer network. */
 export class Network {

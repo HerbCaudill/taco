@@ -1,5 +1,5 @@
 import { hash, type Hash } from '@localfirst/crypto'
-import { HashPurpose } from 'constants.js'
+import { HashPurpose } from '../constants.js'
 
 const { LINK_HASH } = HashPurpose
 

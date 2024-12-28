@@ -1,5 +1,5 @@
 import type { Action, Link, Graph } from './types.js'
-import type { Hash } from 'util/index.js'
+import type { Hash } from '../util/index.js'
 import { getLink } from './getLink.js'
 
 // prettier-ignore

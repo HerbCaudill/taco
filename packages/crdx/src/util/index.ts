@@ -1,2 +1,2 @@
-export * from 'util/arrayToMap.js'
-export * from 'util/types.js'
+export * from '../util/arrayToMap.js'
+export * from '../util/types.js'
