@@ -43,9 +43,7 @@ export const getDeviceUserFromGraph = ({
   const userKeyring = select.keyring(state, { type: USER, name: userId }, starterKeys)
   const keys = getLatestGeneration(userKeyring)
 
-  if (!keys) {
-    throw new Error('Failed to get device user from graph as there are no keys for user keyring')
-  }
+  assert(keys, 'Failed to get device user from graph as there are no keys for user keyring')
 
   const user: UserWithSecrets = { userName, userId, keys }
 

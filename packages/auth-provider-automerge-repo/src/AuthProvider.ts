@@ -211,9 +211,7 @@ export class AuthProvider extends EventEmitter<AuthProviderEvents> {
    * Creates a team and registers it with all of our sync servers.
    */
   public async createTeam(teamName: string) {
-    if (!this.#user) {
-      throw new Error('Cannot create team as user is missing on AuthProvider')
-    }
+    assert(this.#user, 'Cannot create team as user is missing on AuthProvider')
 
     const team = Auth.createTeam(teamName, {
       device: this.#device,
@@ -665,9 +663,7 @@ export class AuthProvider extends EventEmitter<AuthProviderEvents> {
 
     const savedShares = unpack(serializedState) as SerializedState
 
-    if (!this.#user) {
-      throw new Error('Cannot load state as user is missing on AuthProvider')
-    }
+    assert(this.#user, 'Cannot load state as user is missing on AuthProvider')
 
     await Promise.all(
       Object.values(savedShares).map(async share => {
