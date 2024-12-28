@@ -43,13 +43,10 @@ export const decryptLink = <A extends Action, C>(
 /**
  * Decrypts a graph using a one or more keys.
  */
-export const decryptGraph: DecryptFn = <A extends Action, C>({
+export const decryptGraph = (<A extends Action, C>({
   encryptedGraph,
   keys,
-}: {
-  encryptedGraph: MaybePartlyDecryptedGraph<A, C>
-  keys: KeysetWithSecrets | KeysetWithSecrets[] | Keyring
-}): Graph<A, C> => {
+}: DecryptFnParams<A, C>): Graph<A, C> => {
   const { encryptedLinks, root, childMap = {} } = encryptedGraph
 
   const links = encryptedGraph.links ?? {}
@@ -83,14 +80,14 @@ export const decryptGraph: DecryptFn = <A extends Action, C>({
     ...encryptedGraph,
     links: decryptedLinks,
   }
-}
+}) satisfies DecryptFn<any, any>
 
 export type DecryptFnParams<A extends Action, C> = {
   encryptedGraph: MaybePartlyDecryptedGraph<A, C>
   keys: KeysetWithSecrets | KeysetWithSecrets[] | Keyring
 }
 
-export type DecryptFn = <A extends Action, C>({
+export type DecryptFn<A extends Action, C> = ({
   encryptedGraph,
   keys,
 }: DecryptFnParams<A, C>) => Graph<A, C>

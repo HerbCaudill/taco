@@ -25,7 +25,7 @@ export const receiveMessage = <A extends Action, C>(
 
   keys: KeysetWithSecrets | Keyring,
 
-  decrypt: DecryptFn = decryptGraph
+  decrypt: DecryptFn<A, C> = decryptGraph
 ): [Graph<A, C>, SyncState] => {
   // if a keyset was provided, wrap it in a keyring
   const keyring = createKeyring(keys)

@@ -1,6 +1,6 @@
 /* eslint-disable object-shorthand */
 import { EventEmitter } from '@herbcaudill/eventemitter42'
-import type { DecryptFnParams } from '@localfirst/crdx'
+import type { DecryptFn, DecryptFnParams, Graph } from '@localfirst/crdx'
 import {
   generateMessage,
   headsAreEqual,
@@ -33,7 +33,13 @@ import { redactDevice } from '../device/index.js'
 import * as invitations from '../invitation/index.js'
 import { pack, unpack } from 'msgpackr'
 import { getTeamState } from '../team/getTeamState.js'
-import { Team, decryptTeamGraph, type TeamAction, type TeamContext } from '../team/index.js'
+import {
+  Team,
+  TeamGraph,
+  decryptTeamGraph,
+  type TeamAction,
+  type TeamContext,
+} from '../team/index.js'
 import * as select from '../team/selectors/index.js'
 import { arraysAreEqual } from '../util/arraysAreEqual.js'
 import { KeyType } from '../util/index.js'
@@ -308,7 +314,7 @@ export class Connection extends EventEmitter<ConnectionEvents> {
           const deviceKeys = device.keys
 
           // handle errors here
-          const decrypt = ({ encryptedGraph, keys }: DecryptFnParams<TeamAction, TeamContext>) =>
+          const decrypt: DecryptFn<TeamAction, TeamContext> = ({ encryptedGraph, keys }) =>
             decryptTeamGraph({ encryptedGraph, teamKeys: keys, deviceKeys })
 
           const [newChain, syncState] = receiveMessage(
