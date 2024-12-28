@@ -1,9 +1,9 @@
 ﻿import { memoize } from '@localfirst/shared'
 import { type ValidationResult, type ValidatorSet } from './types.js'
 import { fail, validators } from './validators.js'
-import { VALID } from 'constants.js'
-import { hashEncryptedLink } from 'graph/hashLink.js'
-import { type Action, type Link, type Graph } from 'graph/types.js'
+import { VALID } from '../constants.js'
+import { hashEncryptedLink } from '../graph/hashLink.js'
+import { type Action, type Link, type Graph } from '../graph/types.js'
 import { hash } from '@localfirst/crypto'
 
 /**

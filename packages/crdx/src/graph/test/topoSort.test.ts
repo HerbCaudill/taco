@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { buildGraph, byPayload, getPayloads } from 'util/testing/graph.js'
-import { topoSort } from 'graph/index.js'
+import { buildGraph, byPayload, getPayloads } from '../../util/testing/graph.js'
+import { topoSort } from '../index.js'
 
 describe('graphs', () => {
   describe('topoSort', () => {
@@ -20,7 +20,7 @@ describe('graphs', () => {
     })
 
     describe('simple graph', () => {
-      const graph = buildGraph(` 
+      const graph = buildGraph(`
           ┌─ b
        a ─┤
           └─ c
@@ -44,8 +44,8 @@ describe('graphs', () => {
                           ┌─ e ─ g ─┐
                 ┌─ c ─ d ─┤         ├─ o ─┐
          a ─ b ─┤         └─── f ───┤     ├─ n
-                ├──── h ──── i ─────┘     │ 
-                └───── j ─── k ── l ──────┘           
+                ├──── h ──── i ─────┘     │
+                └───── j ─── k ── l ──────┘
       `)
       test('sorted by payload', () => {
         const sequence = topoSort(graph, { comparator: byPayload })
@@ -110,10 +110,10 @@ describe('graphs', () => {
     describe('multiple heads', () => {
       const graph = buildGraph(`
                           ┌─ e ─ g ─┐
-                ┌─ c ─ d ─┤         ├─ o 
-         a ─ b ─┤         └─── f ───┘     
-                ├─ h ─ i  
-                └─ j 
+                ┌─ c ─ d ─┤         ├─ o
+         a ─ b ─┤         └─── f ───┘
+                ├─ h ─ i
+                └─ j
       `)
       test('sorted by payload', () => {
         const sequence = topoSort(graph, { comparator: byPayload })

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { EPHEMERAL_SCOPE } from 'constants.js'
-import { KeyType, type KeysetWithSecrets, createKeyset, redactKeys } from 'keyset/index.js'
+import { EPHEMERAL_SCOPE } from '../../constants.js'
+import { KeyType, type KeysetWithSecrets, createKeyset, redactKeys } from '../index.js'
 
 describe('redact', () => {
   it('should redact secrets from a random keyset', () => {

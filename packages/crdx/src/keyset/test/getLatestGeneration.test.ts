@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { getLatestGeneration } from '../getLatestGeneration.js'
-import { createKeyring, createKeyset } from 'index.js'
+import { createKeyring, createKeyset } from '../../index.js'
 
 const TEAM_SCOPE = { type: 'TEAM', name: 'TEAM' }
 

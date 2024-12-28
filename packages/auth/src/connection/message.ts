@@ -1,5 +1,5 @@
 import type { Base58, Hash, Keyring, SyncMessage as SyncPayload } from '@localfirst/crdx'
-import type { Challenge, IdentityClaim } from 'connection/types.js'
+import type { Challenge, IdentityClaim } from './types.js'
 import type { ErrorMessage, LocalErrorMessage } from './errors.js'
 
 export type ReadyMessage = {

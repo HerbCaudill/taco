@@ -1,5 +1,5 @@
-import { Connection } from 'connection/Connection.js'
-import { isServerContext, type Context } from 'connection/types.js'
+import { Connection } from '../../connection/Connection.js'
+import { isServerContext, type Context } from '../../connection/types.js'
 import { type TestChannel } from './TestChannel.js'
 import { pause } from '@localfirst/shared'
 

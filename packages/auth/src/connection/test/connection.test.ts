@@ -1,4 +1,4 @@
-import { TestChannel, all, connect, joinTestChannel, setup } from 'util/testing/index.js'
+import { TestChannel, all, connect, joinTestChannel, setup } from '../../util/testing/index.js'
 import { pause } from '@localfirst/shared'
 import { describe, it } from 'vitest'
 

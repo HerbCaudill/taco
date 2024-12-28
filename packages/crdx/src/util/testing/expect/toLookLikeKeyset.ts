@@ -1,5 +1,5 @@
 ﻿import { expect } from 'vitest'
-import { type Keyset } from 'keyset/index.js'
+import { type Keyset } from '../../../keyset/index.js'
 // ignore file coverage
 expect.extend({
   toLookLikeKeyset(maybeKeyset: Keyset | Record<string, unknown>) {

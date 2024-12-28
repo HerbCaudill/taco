@@ -1,5 +1,5 @@
 import { expect } from 'vitest'
-import { type ValidationResult } from 'util/types.js'
+import { type ValidationResult } from '../../types.js'
 
 // ignore coverage
 expect.extend({

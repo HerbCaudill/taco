@@ -1,10 +1,10 @@
 import { createKeyring, createKeyset, type UnixTimestamp } from '@localfirst/crdx'
 import { signatures } from '@localfirst/crypto'
-import { redactDevice, Team, type FirstUseDevice } from 'index.js'
-import { generateProof } from 'invitation/index.js'
-import * as teams from 'team/index.js'
-import { KeyType } from 'util/index.js'
-import { setup } from 'util/testing/index.js'
+import { redactDevice, Team, type FirstUseDevice } from '../../index.js'
+import { generateProof } from '../../invitation/index.js'
+import * as teams from '../index.js'
+import { KeyType } from '../../util/index.js'
+import { setup } from '../../util/testing/index.js'
 import { describe, expect, it } from 'vitest'
 
 const { USER } = KeyType
@@ -154,8 +154,8 @@ describe('Team', () => {
 
         // A bunch of people use the same invitation and 👩🏾 Alice admits them all
         const invitees = `
-            amanda, bob, charlie, dwight, edwin, frida, gertrude, herbert, 
-            ignaszi, joão, krishna, lashawn, mary, ngunda, oprah, phil, quân, 
+            amanda, bob, charlie, dwight, edwin, frida, gertrude, herbert,
+            ignaszi, joão, krishna, lashawn, mary, ngunda, oprah, phil, quân,
             rainbow, steve, thad, uriah, vanessa, wade, xerxes, yazmin, zelda`
           .replaceAll(/\s/g, '')
           .split(',')

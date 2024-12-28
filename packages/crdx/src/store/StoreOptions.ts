@@ -1,8 +1,8 @@
 import { type Reducer } from './types.js'
-import { type Action, type Graph, type Resolver } from 'graph/index.js'
-import { type Keyring, type KeysetWithSecrets } from 'keyset/index.js'
-import { type UserWithSecrets } from 'user/index.js'
-import { type ValidatorSet } from 'validator/index.js'
+import { type Action, type Graph, type Resolver } from '../graph/index.js'
+import { type Keyring, type KeysetWithSecrets } from '../keyset/index.js'
+import { type UserWithSecrets } from '../user/index.js'
+import { type ValidatorSet } from '../validator/index.js'
 
 export type StoreOptions<S, A extends Action, C> = {
   /** The user local user, along with their secret keys for signing, encrypting, etc.  */

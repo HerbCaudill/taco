@@ -1,7 +1,7 @@
-import { ADMIN } from 'role/index.js'
-import * as teams from 'team/index.js'
-import { setup } from 'util/testing/index.js'
-import 'util/testing/expect/toLookLikeKeyset.js'
+import { ADMIN } from '../../role/index.js'
+import * as teams from '../index.js'
+import { setup } from '../../util/testing/index.js'
+import '../../util/testing/expect/toLookLikeKeyset.js'
 import { symmetric } from '@localfirst/crypto'
 import { describe, expect, it } from 'vitest'
 

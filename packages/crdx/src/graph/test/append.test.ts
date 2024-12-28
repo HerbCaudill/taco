@@ -1,8 +1,8 @@
-import { TEST_GRAPH_KEYS as keys, setup } from 'util/testing/setup.js'
+import { TEST_GRAPH_KEYS as keys, setup } from '../../util/testing/setup.js'
 import { describe, expect, test } from 'vitest'
-import { append, createGraph, getHead, getRoot } from 'graph/index.js'
-import { validate } from 'validator/index.js'
-import 'util/testing/expect/toBeValid'
+import { append, createGraph, getHead, getRoot } from '../index.js'
+import { validate } from '../../validator/index.js'
+import '../../util/testing/expect/toBeValid'
 
 const { alice } = setup('alice')
 const defaultUser = alice

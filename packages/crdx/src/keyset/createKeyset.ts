@@ -1,7 +1,7 @@
 ﻿import { hash, asymmetric, signatures, stretch, randomKey } from '@localfirst/crypto'
 import { type KeyScope, type KeysetWithSecrets } from './types.js'
-import { HashPurpose } from 'constants.js'
-import { type Optional } from 'util/index.js'
+import { HashPurpose } from '../constants.js'
+import { type Optional } from '../util/index.js'
 
 const { SIGNATURE, ENCRYPTION, SYMMETRIC } = HashPurpose
 

@@ -1,14 +1,14 @@
 import { describe, expect, test } from 'vitest'
-import { buildGraph, findByPayload } from 'util/testing/graph.js'
-import { getChildren, getRoot } from 'graph/index.js'
+import { buildGraph, findByPayload } from '../../util/testing/graph.js'
+import { getChildren, getRoot } from '../index.js'
 
 describe('getChildren', () => {
   const graph = buildGraph(`
                           ┌─ e ─ g ─┐
                 ┌─ c ─ d ─┤         ├─ o ─┐
          a ─ b ─┤         └─── f ───┤     ├─ n
-                ├──── h ──── i ─────┘     │ 
-                └───── j ─── k ── l ──────┘           
+                ├──── h ──── i ─────┘     │
+                └───── j ─── k ── l ──────┘
       `)
   test('root has 1 child', () => expect(getChildren(graph, getRoot(graph))).toHaveLength(1))
   test('b has 3 children', () =>

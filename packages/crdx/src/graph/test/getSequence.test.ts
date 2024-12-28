@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
-import { type XAction, buildGraph, getPayloads } from 'util/testing/graph.js'
-import { type Resolver, getConcurrentLinks, getSequence } from 'graph/index.js'
-import { type Hash } from 'util/index.js'
+import { type XAction, buildGraph, getPayloads } from '../../util/testing/graph.js'
+import { type Resolver, getConcurrentLinks, getSequence } from '../index.js'
+import { type Hash } from '../../util/index.js'
 
 describe('graphs', () => {
   describe('getSequence', () => {
@@ -64,7 +64,7 @@ describe('graphs', () => {
     })
 
     test('simple graph', () => {
-      const graph = buildGraph(` 
+      const graph = buildGraph(`
           ┌─ b
        a ─┤
           └─ c
@@ -80,8 +80,8 @@ describe('graphs', () => {
                           ┌─ e ─ g ─┐
                 ┌─ c ─ d ─┤         ├─ o ─┐
          a ─ b ─┤         └─── f ───┤     ├─ n
-                ├──── h ──── i ─────┘     │ 
-                └───── j ─── k ── l ──────┘           
+                ├──── h ──── i ─────┘     │
+                └───── j ─── k ── l ──────┘
       `)
       const sequence = getSequence(graph, resolver)
       const payloads = getPayloads(sequence)
@@ -109,10 +109,10 @@ describe('graphs', () => {
     test('multiple heads', () => {
       const graph = buildGraph(`
                           ┌─ e ─ g ─┐
-                ┌─ c ─ d ─┤         ├─ o 
-         a ─ b ─┤         └─── f ───┘     
-                ├─ h ─ i  
-                └─ j 
+                ┌─ c ─ d ─┤         ├─ o
+         a ─ b ─┤         └─── f ───┘
+                ├─ h ─ i
+                └─ j
       `)
       const sequence = getSequence(graph, resolver)
       const payloads = getPayloads(sequence)

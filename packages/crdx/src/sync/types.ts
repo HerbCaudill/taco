@@ -1,6 +1,6 @@
-import { type EncryptedLink, type LinkMap } from 'graph/index.js'
-import { type Hash } from 'util/index.js'
-import { type ValidationError } from 'validator/index.js'
+import { type EncryptedLink, type LinkMap } from '../graph/index.js'
+import { type Hash } from '../util/index.js'
+import { type ValidationError } from '../validator/index.js'
 
 export type SyncState = {
   their: {

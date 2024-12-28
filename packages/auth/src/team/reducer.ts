@@ -1,6 +1,6 @@
 import { ROOT, type Reducer } from '@localfirst/crdx'
-import { ADMIN } from 'role/index.js'
-import { clone, composeTransforms } from 'util/index.js'
+import { ADMIN } from '../role/index.js'
+import { clone, composeTransforms } from '../util/index.js'
 import { invalidLinkReducer } from './invalidLinkReducer.js'
 import { setHead } from './setHead.js'
 import {

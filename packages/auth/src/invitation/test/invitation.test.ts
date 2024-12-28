@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { create, generateProof, randomSeed, validate } from 'invitation/index.js'
+import { create, generateProof, randomSeed, validate } from '../index.js'
 
 describe('invitations', () => {
   test('create invitation', () => {

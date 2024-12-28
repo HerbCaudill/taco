@@ -1,6 +1,6 @@
 import { type UserWithSecrets } from '@localfirst/crdx'
-import { type DeviceWithSecrets } from 'device/index.js'
-import { type ServerWithSecrets } from 'server/index.js'
+import { type DeviceWithSecrets } from '../device/index.js'
+import { type ServerWithSecrets } from '../server/index.js'
 
 export type LocalContext = LocalUserContext | LocalServerContext
 

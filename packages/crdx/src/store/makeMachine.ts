@@ -1,6 +1,6 @@
 import { type Reducer } from './types.js'
-import { type Action, getSequence, type Graph, type Resolver } from 'graph/index.js'
-import { validate, type ValidatorSet } from 'validator/index.js'
+import { type Action, getSequence, type Graph, type Resolver } from '../graph/index.js'
+import { validate, type ValidatorSet } from '../validator/index.js'
 
 export const makeMachine = <S, A extends Action, C>({
   initialState,

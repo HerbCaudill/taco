@@ -1,8 +1,8 @@
 import { type KeyMetadata, type KeyScope, type KeysetWithSecrets } from '@localfirst/crdx'
 import { keyMap } from './keyMap.js'
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 import { assert } from '@localfirst/shared'
-import { lockboxSummary } from 'util/lockboxSummary.js'
+import { lockboxSummary } from '../../util/lockboxSummary.js'
 
 /** Returns the keys for the given scope, if they are in a lockbox that the current device has access to */
 export const keys = (
@@ -19,7 +19,7 @@ export const keys = (
     keys,
     `Couldn't find keys: ${JSON.stringify(scope)}
      Device: ${deviceKeys.name}
-     Available lockboxes: \n- ${state.lockboxes.map(lockboxSummary).join('\n- ')} 
+     Available lockboxes: \n- ${state.lockboxes.map(lockboxSummary).join('\n- ')}
      Keymap: ${JSON.stringify(keysFromLockboxes, null, 2)}`
   )
 

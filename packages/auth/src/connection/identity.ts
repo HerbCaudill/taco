@@ -6,8 +6,8 @@ import {
   type UnixTimestamp,
 } from '@localfirst/crdx'
 import { signatures, randomKey } from '@localfirst/crypto'
-import { type Challenge } from 'connection/types.js'
-import { VALID, type ValidationResult } from 'util/index.js'
+import { type Challenge } from './types.js'
+import { VALID, type ValidationResult } from '../util/index.js'
 
 export const challenge = (identityClaim: KeyScope): Challenge => ({
   ...identityClaim,

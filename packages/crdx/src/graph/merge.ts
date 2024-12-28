@@ -1,6 +1,6 @@
 ﻿import { uniq } from 'lodash-es'
 import { type Action, type EncryptedLink, type Link, type Graph } from './types.js'
-import { type Hash } from 'util/index.js'
+import { type Hash } from '../util/index.js'
 
 /**
  * Returns a new graph that contains all the information in the two graphs provided.

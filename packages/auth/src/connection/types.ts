@@ -15,10 +15,10 @@ import type {
   DeviceWithSecrets,
   FirstUseDevice,
   FirstUseDeviceWithSecrets,
-} from 'device/index.js'
-import type { ProofOfInvitation } from 'invitation/index.js'
-import type { ServerWithSecrets } from 'server/index.js'
-import type { Member, Team } from 'team/index.js'
+} from '../device/index.js'
+import type { ProofOfInvitation } from '../invitation/index.js'
+import type { ServerWithSecrets } from '../server/index.js'
+import type { Member, Team } from '../team/index.js'
 import type { ConnectionErrorPayload } from './errors.js'
 import type { ConnectionMessage } from './message.js'
 

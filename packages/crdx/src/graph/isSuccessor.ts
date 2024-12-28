@@ -1,5 +1,5 @@
 import { type Action, type Link, type Graph } from './types.js'
-import { type Hash } from 'util/index.js'
+import { type Hash } from '../util/index.js'
 import { getSuccessorHashes } from './getSuccessors.js'
 
 /** Returns true if `a` is a successor of `b` */

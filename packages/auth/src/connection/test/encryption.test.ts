@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { connect, setup } from 'util/testing/index.js'
+import { connect, setup } from '../../util/testing/index.js'
 import { eventPromise } from '@localfirst/shared'
 import { randomKeyBytes } from '@localfirst/crypto'
 

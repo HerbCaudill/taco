@@ -1,5 +1,5 @@
-import { type RootAction } from 'graph/index.js'
-import { type Reducer } from 'store/types.js'
+import { type RootAction } from '../../../graph/index.js'
+import { type Reducer } from '../../types.js'
 
 // Counter
 

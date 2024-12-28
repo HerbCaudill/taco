@@ -1,8 +1,8 @@
 import { createUser } from '@localfirst/crdx'
 import { describe, expect, it } from 'vitest'
 import { createTeam } from '../createTeam.js'
-import { createDevice } from 'device/index.js'
-import { setup } from 'util/testing/index.js'
+import { createDevice } from '../../device/index.js'
+import { setup } from '../../util/testing/index.js'
 import { load } from '../load.js'
 
 describe('Team', () => {

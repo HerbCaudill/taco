@@ -1,4 +1,4 @@
-import { setup } from 'util/testing/index.js'
+import { setup } from '../../util/testing/index.js'
 import { describe, expect, it } from 'vitest'
 
 describe('Team', () => {

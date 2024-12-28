@@ -2,9 +2,9 @@
 import { type EMPTY_GRAPH } from './createGraph.js'
 import { hashEncryptedLink } from './hashLink.js'
 import type { Action, EncryptedLink, Graph, Link, LinkBody } from './types.js'
-import type { KeysetWithSecrets } from 'keyset/index.js'
-import type { UserWithSecrets } from 'user/index.js'
-import type { UnixTimestamp } from 'util/index.js'
+import type { KeysetWithSecrets } from '../keyset/index.js'
+import type { UserWithSecrets } from '../user/index.js'
+import type { UnixTimestamp } from '../util/index.js'
 
 export const append = <A extends Action, C>({
   graph,

@@ -1,18 +1,18 @@
 import { makeRandom } from '@herbcaudill/random'
-import { TEST_GRAPH_KEYS as keys } from 'util/testing/setup.js'
+import { TEST_GRAPH_KEYS as keys } from '../../util/testing/setup.js'
 import { describe, expect, test } from 'vitest'
-import { type RootAction, createGraph } from 'graph/index.js'
-import { type Store, createStore } from 'store/index.js'
-import { type Reducer } from 'store/types.js'
-import { createUser } from 'user/index.js'
-import { arrayToMap } from 'util/index.js'
+import { type RootAction, createGraph } from '../../graph/index.js'
+import { type Store, createStore } from '../index.js'
+import { type Reducer } from '../types.js'
+import { createUser } from '../../user/index.js'
+import { arrayToMap } from '../../util/index.js'
 
 /*
 This is a somewhat more complicated example, modeling the game Scrabble Attacks (created by Nancy
-Hawa). See https://github.com/HerbCaudill/scrabbleattacks for rules. 
+Hawa). See https://github.com/HerbCaudill/scrabbleattacks for rules.
 
 This store doesn't have a custom resolver; any conflicting actions (e.g. concurrent attempts to take
-the same letter) are ordered arbitrarily and dealt with in the reducer. 
+the same letter) are ordered arbitrarily and dealt with in the reducer.
 */
 
 const alice = createUser('alice', 'alice')

@@ -1,7 +1,7 @@
 // ignore file coverage
 import { eventPromise } from '@localfirst/shared'
-import { type Connection, type ConnectionEvents } from 'connection/index.js'
-import { type InviteeDeviceContext, type InviteeMemberContext } from 'connection/types.js'
+import { type Connection, type ConnectionEvents } from '../../connection/index.js'
+import { type InviteeDeviceContext, type InviteeMemberContext } from '../../connection/types.js'
 import { expect } from 'vitest'
 import { TestChannel } from './TestChannel.js'
 import { joinTestChannel } from './joinTestChannel.js'

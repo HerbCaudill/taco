@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest'
 import { createTeam } from '../createTeam.js'
 import { redactUser } from '../redactUser.js'
 import { type TeamAction, type TeamGraph } from '../types.js'
-import { ADMIN } from 'role/index.js'
-import { clone, graphSummary } from 'util/index.js'
-import { setup as userSetup } from 'util/testing/index.js'
+import { ADMIN } from '../../role/index.js'
+import { clone, graphSummary } from '../../util/index.js'
+import { setup as userSetup } from '../../util/testing/index.js'
 
 describe('membershipResolver', () => {
   const setup = () => {

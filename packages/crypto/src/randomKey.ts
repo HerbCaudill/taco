@@ -1,6 +1,6 @@
 import sodium from 'libsodium-wrappers-sumo'
 import { base58 } from './util/index.js'
-import { type Base58 } from 'types.js'
+import { type Base58 } from './types.js'
 
 /** Returns an unpredictable key with the given length (32 bytes by default), as a byte array. */
 export const randomKeyBytes = (length = 32) => sodium.randombytes_buf(length)

@@ -1,13 +1,13 @@
 ﻿/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { asymmetric } from '@localfirst/crypto'
-import { buildGraph } from 'util/testing/graph.js'
-import { TEST_GRAPH_KEYS as keys, setup } from 'util/testing/setup.js'
+import { buildGraph } from '../../util/testing/graph.js'
+import { TEST_GRAPH_KEYS as keys, setup } from '../../util/testing/setup.js'
 import { describe, expect, test, vitest } from 'vitest'
-import { hashEncryptedLink } from 'graph/hashLink.js'
-import { append, createGraph, getHead, getLink, getRoot } from 'graph/index.js'
-import { type Hash } from 'util/index.js'
-import { validate } from 'validator/validate.js'
-import 'util/testing/expect/toBeValid'
+import { hashEncryptedLink } from '../../graph/hashLink.js'
+import { append, createGraph, getHead, getLink, getRoot } from '../../graph/index.js'
+import { type Hash } from '../../util/index.js'
+import { validate } from '../validate.js'
+import '../../util/testing/expect/toBeValid'
 
 const { setSystemTime } = vitest.useFakeTimers()
 
@@ -35,8 +35,8 @@ describe('graphs', () => {
                              ┌─ e ─ g ─┐
                    ┌─ c ─ d ─┤         ├─ o ─┐
             a ─ b ─┤         └─── f ───┤     ├─ n
-                   ├──── h ──── i ─────┘     │ 
-                   └───── j ─── k ── l ──────┘           
+                   ├──── h ──── i ─────┘     │
+                   └───── j ─── k ── l ──────┘
       `)
         expect(validate(graph)).toBeValid()
         return graph

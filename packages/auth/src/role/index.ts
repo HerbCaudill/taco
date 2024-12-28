@@ -1,2 +1,2 @@
-export * from 'role/constants.js'
-export * from 'role/types.js'
+export * from './constants.js'
+export * from './types.js'

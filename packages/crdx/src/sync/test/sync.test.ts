@@ -1,14 +1,14 @@
 import { assert } from '@localfirst/shared'
-import { append, createGraph, headsAreEqual, type Graph } from 'graph/index.js'
-import { generateMessage, initSyncState, receiveMessage } from 'sync/index.js'
-import { createUser, type UserWithSecrets } from 'user/index.js'
+import { append, createGraph, headsAreEqual, type Graph } from '../../graph/index.js'
+import { generateMessage, initSyncState, receiveMessage } from '../index.js'
+import { createUser, type UserWithSecrets } from '../../user/index.js'
 import {
   expectNotToBeSynced,
   expectToBeSynced,
   setupWithNetwork,
   type Network,
-} from 'util/testing/Network.js'
-import { TEST_GRAPH_KEYS as keys } from 'util/testing/setup.js'
+} from '../../util/testing/Network.js'
+import { TEST_GRAPH_KEYS as keys } from '../../util/testing/setup.js'
 import { describe, expect, it, vitest } from 'vitest'
 
 const { setSystemTime } = vitest.useFakeTimers()

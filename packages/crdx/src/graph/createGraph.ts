@@ -1,7 +1,7 @@
 ﻿import { createId } from '@paralleldrive/cuid2'
-import { ROOT } from 'constants.js'
-import type { KeysetWithSecrets } from 'keyset/index.js'
-import type { UserWithSecrets } from 'user/index.js'
+import { ROOT } from '../constants.js'
+import type { KeysetWithSecrets } from '../keyset/index.js'
+import type { UserWithSecrets } from '../user/index.js'
 import { append } from './append.js'
 import type { Action, Graph } from './types.js'
 

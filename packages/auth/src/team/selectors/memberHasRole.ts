@@ -1,6 +1,6 @@
-import { ADMIN } from 'role/index.js'
-import * as select from 'team/selectors/index.js'
-import { type TeamState } from 'team/types.js'
+import { ADMIN } from '../../role/index.js'
+import * as select from '../selectors/index.js'
+import { type TeamState } from '../types.js'
 
 export const memberHasRole = (state: TeamState, userId: string, role: string) => {
   if (!select.hasMember(state, userId)) {

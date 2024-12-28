@@ -11,12 +11,12 @@ import {
   type Action,
   type Graph,
   type Resolver,
-} from 'graph/index.js'
-import { createKeyring } from 'keyset/createKeyring.js'
-import { isKeyset, type Keyring, type KeysetWithSecrets } from 'keyset/index.js'
-import { type UserWithSecrets } from 'user/index.js'
-import { type Hash, type Optional } from 'util/index.js'
-import { validate, type ValidatorSet } from 'validator/index.js'
+} from '../graph/index.js'
+import { createKeyring } from '../keyset/createKeyring.js'
+import { isKeyset, type Keyring, type KeysetWithSecrets } from '../keyset/index.js'
+import { type UserWithSecrets } from '../user/index.js'
+import { type Hash, type Optional } from '../util/index.js'
+import { validate, type ValidatorSet } from '../validator/index.js'
 import { type StoreOptions } from './StoreOptions.js'
 import { makeMachine } from './makeMachine.js'
 import { type Reducer } from './types.js'

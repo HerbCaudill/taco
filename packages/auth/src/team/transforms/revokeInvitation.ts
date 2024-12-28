@@ -1,4 +1,4 @@
-import { type Transform } from 'team/types.js'
+import { type Transform } from '../types.js'
 
 export const revokeInvitation =
   (id: string): Transform =>

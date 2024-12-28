@@ -1,3 +1,3 @@
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 
 export const messages = (state: TeamState) => state.messages

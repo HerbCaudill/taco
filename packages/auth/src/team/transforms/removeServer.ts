@@ -1,5 +1,5 @@
-import { type Host } from 'server/index.js'
-import { type Transform } from 'team/types.js'
+import { type Host } from '../../server/index.js'
+import { type Transform } from '../types.js'
 
 export const removeServer =
   (host: Host): Transform =>

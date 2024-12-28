@@ -1,6 +1,6 @@
-import { type NetworkMessage } from 'util/testing/Network.js'
+import { type NetworkMessage } from '../util/testing/Network.js'
 import { truncateHashes } from '@localfirst/shared'
-import { type SyncMessage } from 'sync/index.js'
+import { type SyncMessage } from '../sync/index.js'
 
 export const logMessages = (msgs: NetworkMessage[]) => {
   const result = msgs.map(m => JSON.stringify(networkMessageSummary(m))).join('\n')

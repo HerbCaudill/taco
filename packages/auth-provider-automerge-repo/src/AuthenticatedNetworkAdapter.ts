@@ -1,5 +1,5 @@
 import { NetworkAdapter, type Message } from '@automerge/automerge-repo'
-import { type ShareId } from 'types.js'
+import { type ShareId } from './types.js'
 
 /**
  * An AuthenticatedNetworkAdapter is a NetworkAdapter that wraps another NetworkAdapter and

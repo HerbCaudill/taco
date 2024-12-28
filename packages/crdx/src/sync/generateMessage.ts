@@ -7,8 +7,8 @@ import {
   getPredecessorHashes,
   type Graph,
   headsAreEqual,
-} from 'graph/index.js'
-import { type Hash } from 'util/index.js'
+} from '../graph/index.js'
+import { type Hash } from '../util/index.js'
 
 /**
  * Generates a new sync message for a peer based on our current graph and our sync state with them.

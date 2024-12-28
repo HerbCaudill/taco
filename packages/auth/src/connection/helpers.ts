@@ -1,5 +1,5 @@
-import type { ConnectionMessage } from 'connection/message.js'
-import { syncMessageSummary } from 'util/testing/messageSummary.js'
+import type { ConnectionMessage } from './message.js'
+import { syncMessageSummary } from '../util/testing/messageSummary.js'
 import type { Context, ServerContext } from './types.js'
 
 // HELPERS

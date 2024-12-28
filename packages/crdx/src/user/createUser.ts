@@ -1,7 +1,7 @@
 ﻿import { randomKey } from '@localfirst/crypto'
 import { createId } from '@paralleldrive/cuid2'
-import { createKeyset, KeyType } from 'keyset/index.js'
-import { type UserWithSecrets } from 'user/types.js'
+import { createKeyset, KeyType } from '../keyset/index.js'
+import { type UserWithSecrets } from './types.js'
 
 /**
  * Creates a new local user, with randomly-generated keys.

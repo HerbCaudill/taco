@@ -1,8 +1,8 @@
 import { type UnixTimestamp } from '@localfirst/crdx'
 import { generateStarterKeys } from './generateStarterKeys.js'
-import { deriveId } from 'invitation/deriveId.js'
-import { normalize } from 'invitation/normalize.js'
-import { type Invitation } from 'invitation/types.js'
+import { deriveId } from './deriveId.js'
+import { normalize } from './normalize.js'
+import { type Invitation } from './types.js'
 
 export const IKEY_LENGTH = 16
 

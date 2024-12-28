@@ -1,8 +1,8 @@
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 import { assert } from '@localfirst/shared'
 import { server } from './server.js'
 import { hasServer } from './hasServer.js'
-import { castServer } from 'server/castServer.js'
+import { castServer } from '../../server/castServer.js'
 
 export const hasDevice = (
   state: TeamState,

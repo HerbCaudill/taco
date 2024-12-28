@@ -1,6 +1,6 @@
 ﻿import { memoize } from '@localfirst/shared'
 import { uniq } from 'lodash-es'
-import { type Hash } from 'util/index.js'
+import { type Hash } from '../util/index.js'
 import { getChildrenHashes } from './children.js'
 import type { Action, Graph, Link } from './types.js'
 

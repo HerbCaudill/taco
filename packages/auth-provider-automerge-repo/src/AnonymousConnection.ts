@@ -1,8 +1,8 @@
 import { type Message } from '@automerge/automerge-repo'
 import { debug } from '@localfirst/shared'
-import { AbstractConnection, type StateValue } from 'AbstractConnection.js'
+import { AbstractConnection, type StateValue } from './AbstractConnection.js'
 import { pack, unpack } from 'msgpackr'
-import { type ShareId } from 'types.js'
+import { type ShareId } from './types.js'
 
 export class AnonymousConnection extends AbstractConnection {
   readonly #log: debug.Debugger

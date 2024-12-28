@@ -1,6 +1,6 @@
 import { createKeyset, redactKeys } from '@localfirst/crdx'
-import type { Host, Server, ServerWithSecrets } from 'server/index.js'
-import { KeyType } from 'util/index.js'
+import type { Host, Server, ServerWithSecrets } from '../../server/index.js'
+import { KeyType } from '../../util/index.js'
 import { eventPromise } from '@localfirst/shared'
 import {
   TestChannel,
@@ -9,7 +9,7 @@ import {
   setup as setupHumans,
   type SetupConfig,
   type UserStuff,
-} from 'util/testing/index.js'
+} from '../../util/testing/index.js'
 import { describe, expect, it } from 'vitest'
 import {
   createTeam,
@@ -20,7 +20,7 @@ import {
   type InviteeDeviceContext,
   type MemberContext,
   type Team,
-} from 'index.js'
+} from '../../index.js'
 
 describe('Team', () => {
   describe('a server', () => {

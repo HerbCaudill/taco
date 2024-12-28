@@ -1,6 +1,6 @@
 import { type KeysetWithSecrets } from '@localfirst/crdx'
 import { visibleKeys } from './visibleKeys.js'
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 
 /** Returns all keysets from the current device's lockboxes in a structure that looks like this:
  * ```js

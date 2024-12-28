@@ -1,5 +1,5 @@
 import { type Base58 } from '@localfirst/crdx'
-import { type TeamState } from 'team/types.js'
+import { type TeamState } from '../types.js'
 import { assert } from '@localfirst/shared'
 
 export function hasInvitation(state: TeamState, id: Base58): boolean {

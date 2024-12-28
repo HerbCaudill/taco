@@ -1,4 +1,4 @@
-import { arrayToMap } from 'util/index.js'
+import { arrayToMap } from '../util/index.js'
 import { isKeyring, isKeyset, type Keyring, type KeysetWithSecrets } from './types.js'
 
 export const createKeyring = (keys: Keyring | KeysetWithSecrets | KeysetWithSecrets[]): Keyring => {

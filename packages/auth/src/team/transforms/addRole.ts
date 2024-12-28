@@ -1,5 +1,5 @@
-import { type Role } from 'role/index.js'
-import { type Transform } from 'team/types.js'
+import { type Role } from '../../role/index.js'
+import { type Transform } from '../types.js'
 
 export const addRole =
   (newRole: Role): Transform =>

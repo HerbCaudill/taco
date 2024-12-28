@@ -1,8 +1,8 @@
 import { getLatestGeneration, type Keyring, type UserWithSecrets } from '@localfirst/crdx'
 import { assert } from '@localfirst/shared'
-import { generateProof } from 'invitation/generateProof.js'
-import { generateStarterKeys } from 'invitation/generateStarterKeys.js'
-import { KeyType } from 'util/index.js'
+import { generateProof } from '../invitation/generateProof.js'
+import { generateStarterKeys } from '../invitation/generateStarterKeys.js'
+import { KeyType } from '../util/index.js'
 import { getTeamState } from '../team/getTeamState.js'
 import * as select from '../team/selectors/index.js'
 
@@ -42,7 +42,10 @@ export const getDeviceUserFromGraph = ({
 
   const userKeyring = select.keyring(state, { type: USER, name: userId }, starterKeys)
   const keys = getLatestGeneration(userKeyring)
-  const user = { userName, userId, keys }
+
+  assert(keys, 'Failed to get device user from graph as there are no keys for user keyring')
+
+  const user: UserWithSecrets = { userName, userId, keys }
 
   return { user, userKeyring }
 }

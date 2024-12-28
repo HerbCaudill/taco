@@ -1,9 +1,9 @@
-﻿import { TEST_GRAPH_KEYS as keys, setup } from 'util/testing/setup.js'
-import { append } from 'graph/append.js'
-import { createGraph } from 'graph/createGraph.js'
-import { merge } from 'graph/merge.js'
-import { type Action, type Graph, type Link } from 'graph/types.js'
-import { type KeysetWithSecrets } from 'keyset/index.js'
+﻿import { TEST_GRAPH_KEYS as keys, setup } from './setup.js'
+import { append } from '../../graph/append.js'
+import { createGraph } from '../../graph/createGraph.js'
+import { merge } from '../../graph/merge.js'
+import { type Action, type Graph, type Link } from '../../graph/types.js'
+import { type KeysetWithSecrets } from '../../keyset/index.js'
 
 const { alice } = setup('alice')
 
@@ -56,7 +56,7 @@ export const buildGraph = (type: string) => {
     // simple closed
     case trim(`
             ┌─ b ─ c ─┐
-         a ─┤         ├─ e   
+         a ─┤         ├─ e
             └─── d ───┘
 
       `): {
@@ -71,7 +71,7 @@ export const buildGraph = (type: string) => {
     // double closed
     case trim(`
             ┌─ b ─ c ─┐     ┌─ f ─ g ─┐
-         a ─┤         ├─ e ─┤         ├─ i    
+         a ─┤         ├─ e ─┤         ├─ i
             └─── d ───┘     └─── h ───┘
 
       `): {
@@ -142,10 +142,10 @@ export const buildGraph = (type: string) => {
     // multiple heads
     case trim(`
                           ┌─ e ─ g ─┐
-                ┌─ c ─ d ─┤         ├─ o 
-         a ─ b ─┤         └─── f ───┘     
-                ├─ h ─ i  
-                └─ j 
+                ┌─ c ─ d ─┤         ├─ o
+         a ─ b ─┤         └─── f ───┘
+                ├─ h ─ i
+                └─ j
       `): {
       const a = appendLink(root, 'a', keys)
       const b = appendLink(a, 'b', keys)
