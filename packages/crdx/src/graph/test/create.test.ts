@@ -2,7 +2,7 @@ import { TEST_GRAPH_KEYS as keys, setup } from '../../util/testing/setup.js'
 import { describe, expect, test } from 'vitest'
 import { createGraph, deserialize, getHead, getRoot, serialize } from '../index.js'
 import { validate } from '../../validator/index.js'
-import 'util/testing/expect/toBeValid.js'
+import '../../util/testing/expect/toBeValid.js'
 
 const { alice } = setup('alice')
 const defaultUser = alice

@@ -134,7 +134,12 @@ export type AuthProviderEvents = {
    * this is how we get the user's keys.) This event gives the application a chance to persist the
    * team graph and the user's info.
    */
-  joined: (payload: { shareId: ShareId; peerId: PeerId; team: Auth.Team; user: Auth.User }) => void
+  joined: (payload: {
+    shareId: ShareId
+    peerId: PeerId
+    team: Auth.Team
+    user: Auth.UserWithSecrets
+  }) => void
 
   /**
    * We're connected to a peer and have been mutually authenticated.

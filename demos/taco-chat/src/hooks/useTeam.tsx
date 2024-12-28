@@ -5,7 +5,7 @@ import { type AlertInfo, type PeerState } from '../types.js'
 import { assert } from '@localfirst/shared'
 import { ConnectionManager } from 'ConnectionManager.js'
 import { teamContext } from 'components/TeamProvider.js'
-import { randomTeamName } from 'util/randomTeamName.js'
+import { randomTeamName } from '../util/randomTeamName.js'
 
 // TODO: make this an environment var
 const relayUrls = ['ws://localhost:8080']

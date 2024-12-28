@@ -1,7 +1,7 @@
 import { challenge, prove, verify } from '../identity.js'
 import { ADMIN_SCOPE, TEAM_SCOPE } from '../../team/index.js'
 import { setup } from '../../util/testing/index.js'
-import 'util/testing/expect/toBeValid.js'
+import '../../util/testing/expect/toBeValid.js'
 import { type KeyScope, KeyType, createKeyset, redactKeys } from '@localfirst/crdx'
 import { describe, expect, it } from 'vitest'
 

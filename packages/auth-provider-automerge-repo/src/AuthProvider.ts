@@ -8,7 +8,7 @@ import type {
 import { EventEmitter } from '@herbcaudill/eventemitter42'
 import * as Auth from '@localfirst/auth'
 import { hash } from '@localfirst/crypto'
-import { debug, memoize, pause } from '@localfirst/shared'
+import { assert, debug, memoize, pause } from '@localfirst/shared'
 import { type AbstractConnection } from './AbstractConnection.js'
 import { AnonymousConnection } from './AnonymousConnection.js'
 import { buildServerUrl } from './buildServerUrl.js'
@@ -211,7 +211,11 @@ export class AuthProvider extends EventEmitter<AuthProviderEvents> {
    * Creates a team and registers it with all of our sync servers.
    */
   public async createTeam(teamName: string) {
-    const team = await Auth.createTeam(teamName, {
+    if (!this.#user) {
+      throw new Error('Cannot create team as user is missing on AuthProvider')
+    }
+
+    const team = Auth.createTeam(teamName, {
       device: this.#device,
       user: this.#user,
     })
@@ -661,6 +665,10 @@ export class AuthProvider extends EventEmitter<AuthProviderEvents> {
 
     const savedShares = unpack(serializedState) as SerializedState
 
+    if (!this.#user) {
+      throw new Error('Cannot load state as user is missing on AuthProvider')
+    }
+
     await Promise.all(
       Object.values(savedShares).map(async share => {
         if ('encryptedTeam' in share) {
@@ -672,9 +680,12 @@ export class AuthProvider extends EventEmitter<AuthProviderEvents> {
             this.#device.keys.secretKey
           ) as Auth.KeysetWithSecrets
 
-          const context = { device: this.#device, user: this.#user }
+          // By this point it is defined
+          assert(this.#user)
 
-          const team = await Auth.loadTeam(encryptedTeam, context, teamKeys)
+          const context: Auth.LocalContext = { device: this.#device, user: this.#user }
+
+          const team = Auth.loadTeam(encryptedTeam, context, teamKeys)
           return this.addTeam(team)
         } else {
           return this.joinPublicShare(share.shareId)

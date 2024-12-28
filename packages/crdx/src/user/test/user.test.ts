@@ -1,6 +1,6 @@
 import { asymmetric, signatures, symmetric } from '@localfirst/crypto'
 import { describe, expect, it } from 'vitest'
-import 'util/testing/expect/toLookLikeKeyset'
+import '../../util/testing/expect/toLookLikeKeyset'
 import { createUser, redactUser } from '../index.js'
 
 describe('user', () => {
